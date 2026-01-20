@@ -1,0 +1,16 @@
+# Render Deployment Configuration
+# This file is optional but helps with automatic deployment
+
+# Build settings
+buildCommand: npm install && npm run build
+publishDir: dist
+
+# Static site configuration
+staticSite:
+  buildCommand: npm install && npm run build
+  publishPath: dist
+  
+# Environment (optional)
+envVars:
+  - key: NODE_ENV
+    value: production

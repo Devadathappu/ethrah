@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO Meta Tags -->
+  <title>Ethrah - Premium Shopping Experience</title>
+  <meta name="description"
+    content="Discover premium products at Ethrah. Shop our curated collection and connect with us on Instagram or WhatsApp for personalized service.">
+  <meta name="keywords" content="ethrah, shopping, premium products, online store">
+  <meta name="author" content="Ethrah">
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Ethrah - Premium Shopping Experience">
+  <meta property="og:description" content="Discover premium products at Ethrah. Shop our curated collection.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ethrah.in">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/logo.png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="/styles/main.css">
+  <link rel="stylesheet" href="/styles/components.css">
+</head>
+
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="container">
+      <div class="nav-content">
+        <a href="/" class="logo">
+          <img src="/logo.png" alt="Ethrah Logo">
+        </a>
+
+        <div class="nav-links">
+          <a href="#home" class="nav-link">Home</a>
+          <a href="#products" class="nav-link">Products</a>
+          <a href="#about" class="nav-link">About</a>
+          <a href="#contact" class="nav-link">Contact</a>
+        </div>
+
+        <button class="mobile-menu-btn" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu">
+    <a href="#home" class="mobile-nav-link">Home</a>
+    <a href="#products" class="mobile-nav-link">Products</a>
+    <a href="#about" class="mobile-nav-link">About</a>
+    <a href="#contact" class="mobile-nav-link">Contact</a>
+  </div>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="hero-background"></div>
+    <div class="container">
+      <div class="hero-content">
+        <h1 class="hero-title">
+          Welcome to <span class="gradient-text">Ethrah</span>
+        </h1>
+        <p class="hero-subtitle">
+          Discover premium products curated just for you
+        </p>
+        <div class="hero-cta">
+          <a href="#products" class="btn btn-primary">Explore Products</a>
+          <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <span>Scroll to explore</span>
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+        <path d="M10 4V16M10 16L4 10M10 16L16 10" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+          stroke-linejoin="round" />
+      </svg>
+    </div>
+  </section>
+
+  <!-- Featured Products Section -->
+  <section id="products" class="products-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Featured Products</h2>
+        <p class="section-subtitle">Explore our handpicked collection</p>
+      </div>
+
+      <div id="products-grid" class="products-grid">
+        <!-- Products will be dynamically inserted here -->
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about-section">
+    <div class="container">
+      <div class="about-content">
+        <div class="about-text">
+          <h2 class="section-title">About Ethrah</h2>
+          <p class="about-description">
+            At Ethrah, we believe in providing exceptional quality and personalized service.
+            Our carefully curated collection brings you the finest products, backed by our
+            commitment to customer satisfaction.
+          </p>
+          <p class="about-description">
+            Connect with us directly through Instagram or WhatsApp for a personalized shopping
+            experience. We're here to help you find exactly what you're looking for.
+          </p>
+          <div class="about-stats">
+            <div class="stat">
+              <h3 class="stat-number">100+</h3>
+              <p class="stat-label">Happy Customers</p>
+            </div>
+            <div class="stat">
+              <h3 class="stat-number">50+</h3>
+              <p class="stat-label">Premium Products</p>
+            </div>
+            <div class="stat">
+              <h3 class="stat-number">24/7</h3>
+              <p class="stat-label">Customer Support</p>
+            </div>
+          </div>
+        </div>
+        <div class="about-image">
+          <div class="image-placeholder">
+            <svg width="100" height="100" viewBox="0 0 100 100" fill="none">
+              <circle cx="50" cy="50" r="40" stroke="currentColor" stroke-width="2" opacity="0.3" />
+              <path d="M50 30V70M30 50H70" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Get in Touch</h2>
+        <p class="section-subtitle">We'd love to hear from you</p>
+      </div>
+
+      <div class="contact-methods">
+        <a href="javascript:void(0)" id="instagram-link" class="contact-card instagram-card">
+          <div class="contact-icon">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none">
+              <rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="2" />
+              <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2" />
+              <circle cx="18" cy="6" r="1" fill="currentColor" />
+            </svg>
+          </div>
+          <h3>Instagram</h3>
+          <p>Follow us for updates</p>
+        </a>
+
+        <a href="javascript:void(0)" id="whatsapp-link" class="contact-card whatsapp-card">
+          <div class="contact-icon">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none">
+              <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
+                fill="currentColor" />
+            </svg>
+          </div>
+          <h3>WhatsApp</h3>
+          <p>Chat with us directly</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <h3 class="logo-text">Ethrah</h3>
+          <p>Premium shopping experience</p>
+        </div>
+
+        <div class="footer-links">
+          <div class="footer-column">
+            <h4>Quick Links</h4>
+            <a href="#home">Home</a>
+            <a href="#products">Products</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+          </div>
+
+          <div class="footer-column">
+            <h4>Connect</h4>
+            <a href="javascript:void(0)" id="footer-instagram">Instagram</a>
+            <a href="javascript:void(0)" id="footer-whatsapp">WhatsApp</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Ethrah. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="/js/main.js"></script>
+</body>
+
+</html>
