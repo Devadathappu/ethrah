@@ -223,6 +223,9 @@ function renderProducts(productsToRender = products, searchQuery = '') { // Defa
            target="_blank" rel="noopener noreferrer">
            VIEW ON INSTAGRAM
         </a>
+        <button class="btn btn-cart" onclick="performAddToCart(${product.id})">
+           ADD TO CART
+        </button>
       </div>
     </div>
   `).join('');
