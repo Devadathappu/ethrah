@@ -157,7 +157,13 @@ function handleSearch(query) {
         return;
     }
 
-    // Scroll to products so user can see results behind overlay
+    // Close the search overlay so user can see results
+    const searchOverlay = document.getElementById('search-overlay');
+    if (searchOverlay) {
+        searchOverlay.classList.remove('active');
+    }
+
+    // Scroll to products section
     const productsSection = document.getElementById('products');
     if (productsSection) {
         productsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -385,8 +391,8 @@ function init() {
     console.log('Initializing Ethrah...');
     setupNavbarScroll();
     setupMobileMenu();
-    setupSearch(); // Added search setup
-    // setupNavbarIcons(); // Removed Search/Cart alert logic from here for Search
+    setupSearch();
+    setupCart(); // FIXED: This was missing!
     renderProducts();
     setupSocialLinks();
     setupSmoothScroll();
