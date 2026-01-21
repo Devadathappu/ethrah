@@ -143,6 +143,10 @@ ul {
   border-bottom: 1px solid #eee;
 }
 
+.mobile-menu.active {
+  display: block;
+}
+
 .mobile-nav-link {
   display: block;
   padding: 0.8rem 0;
