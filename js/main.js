@@ -143,10 +143,17 @@ function setupSearch() {
             }
         });
 
-        // Search Input Handler (Debounced slightly for performance if needed, but direct is fine for small list)
+        // Search Input Handler - filters as you type
         searchInput.addEventListener('input', (e) => {
             const query = e.target.value.toLowerCase().trim();
             handleSearch(query);
+        });
+
+        // Close overlay and show results on Enter key
+        searchInput.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') {
+                submitSearch();
+            }
         });
     }
 }
@@ -157,7 +164,16 @@ function handleSearch(query) {
         return;
     }
 
-    // Close the search overlay so user can see results
+    const filtered = products.filter(p =>
+        p.name.toLowerCase().includes(query) ||
+        p.price.toLowerCase().includes(query)
+    );
+
+    renderProducts(filtered, query);
+}
+
+// Close search and show results when Enter is pressed
+function submitSearch() {
     const searchOverlay = document.getElementById('search-overlay');
     if (searchOverlay) {
         searchOverlay.classList.remove('active');
@@ -168,13 +184,6 @@ function handleSearch(query) {
     if (productsSection) {
         productsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
-
-    const filtered = products.filter(p =>
-        p.name.toLowerCase().includes(query) ||
-        p.price.toLowerCase().includes(query)
-    );
-
-    renderProducts(filtered, query);
 }
 
 // ============================================
