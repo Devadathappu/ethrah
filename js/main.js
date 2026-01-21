@@ -157,6 +157,12 @@ function handleSearch(query) {
         return;
     }
 
+    // Scroll to products so user can see results behind overlay
+    const productsSection = document.getElementById('products');
+    if (productsSection) {
+        productsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
     const filtered = products.filter(p =>
         p.name.toLowerCase().includes(query) ||
         p.price.toLowerCase().includes(query)
@@ -179,12 +185,15 @@ function renderProducts(productsToRender = products, searchQuery = '') { // Defa
         });
 
         productsGrid.innerHTML = `
-            <div class="no-results" style="grid-column: 1/-1; text-align: center; padding: 2rem;">
-                <p style="font-family: var(--font-serif); font-size: 1.2rem; color: var(--color-text-light);">
-                    No products found matching "${safeQuery}"
+            <div class="no-results" style="grid-column: 1/-1; text-align: center; padding: 3rem 1rem;">
+                <h3 style="font-family: var(--font-serif); font-size: 1.5rem; color: var(--color-text-dark); margin-bottom: 1rem;">
+                    No results found
+                </h3>
+                <p style="font-family: var(--font-sans); color: var(--color-text-light); margin-bottom: 1.5rem;">
+                    We couldn't find any products matching "${safeQuery}".
                 </p>
-                <button onclick="document.getElementById('search-input').value=''; renderProducts();" 
-                        class="btn btn-primary" style="margin-top: 1rem;">
+                <button onclick="document.getElementById('search-input').value=''; renderProducts(); document.getElementById('search-overlay').classList.remove('active');" 
+                        class="btn" style="background: var(--color-primary); color: white; padding: 0.8rem 2rem;">
                     View All Products
                 </button>
             </div>`;
