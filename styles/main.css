@@ -164,10 +164,13 @@ ul {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(255, 255, 255, 0.9);
+  /* Slightly more transparent */
   z-index: 2000;
   align-items: center;
   justify-content: center;
+  backdrop-filter: blur(5px);
+  /* Modern blur effect */
 }
 
 .search-overlay.active {
@@ -183,7 +186,8 @@ ul {
 #search-input {
   width: 100%;
   padding: 1rem 2rem;
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
+  /* Changed to sans-serif (Lato) */
   font-size: 1.5rem;
   border: none;
   border-bottom: 2px solid var(--color-primary);
