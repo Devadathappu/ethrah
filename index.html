@@ -4,19 +4,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ethrah - Premium Accessories</title>
+  <meta name="description" content="Elegant female accessories delivered directly to your favorite apps.">
 
-  <!-- SEO Meta Tags -->
-  <title>Ethrah - Premium Shopping Experience</title>
-  <meta name="description"
-    content="Discover premium products at Ethrah. Shop our curated collection and connect with us on Instagram or WhatsApp for personalized service.">
-  <meta name="keywords" content="ethrah, shopping, premium products, online store">
-  <meta name="author" content="Ethrah">
-
-  <!-- Open Graph Meta Tags -->
-  <meta property="og:title" content="Ethrah - Premium Shopping Experience">
-  <meta property="og:description" content="Discover premium products at Ethrah. Shop our curated collection.">
+  <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://ethrah.in">
+  <meta property="og:title" content="Ethrah - Premium Accessories">
+  <meta property="og:description" content="Elegant female accessories delivered directly to your favorite apps.">
+  <meta property="og:image" content="/logo.png">
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="/logo.png">
@@ -24,7 +20,8 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap"
     rel="stylesheet">
 
   <!-- Stylesheets -->
@@ -35,20 +32,35 @@
 <body>
   <!-- Navigation -->
   <nav class="navbar">
-    <div class="container">
-      <div class="nav-content">
+    <div class="container nav-container">
+      <div class="nav-left">
         <a href="/" class="logo">
-          <img src="/logo.png" alt="Ethrah Logo">
+          <img src="/logo.png" alt="Ethra">
         </a>
+      </div>
 
-        <div class="nav-links">
-          <a href="#home" class="nav-link">Home</a>
-          <a href="#products" class="nav-link">Products</a>
-          <a href="#about" class="nav-link">About</a>
-          <a href="#contact" class="nav-link">Contact</a>
-        </div>
+      <div class="nav-center">
+        <ul class="nav-links">
+          <li><a href="#home" class="nav-link active">Home</a></li>
+          <li><a href="#products" class="nav-link">Shop Accessories</a></li>
+          <li><a href="#about" class="nav-link">About Us</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+          <li><a href="#" class="nav-link">Blog</a></li>
+        </ul>
+      </div>
 
-        <button class="mobile-menu-btn" aria-label="Toggle menu">
+      <div class="nav-right">
+        <button class="icon-btn" aria-label="Search">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+          </svg>
+        </button>
+        <button class="icon-btn" aria-label="Cart">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
+          </svg>
+        </button>
+        <button class="mobile-menu-btn" aria-label="Menu">
           <span></span>
           <span></span>
           <span></span>
@@ -60,157 +72,115 @@
   <!-- Mobile Menu -->
   <div class="mobile-menu">
     <a href="#home" class="mobile-nav-link">Home</a>
-    <a href="#products" class="mobile-nav-link">Products</a>
-    <a href="#about" class="mobile-nav-link">About</a>
+    <a href="#products" class="mobile-nav-link">Shop Accessories</a>
+    <a href="#about" class="mobile-nav-link">About Us</a>
     <a href="#contact" class="mobile-nav-link">Contact</a>
+    <a href="#" class="mobile-nav-link">Blog</a>
   </div>
 
   <!-- Hero Section -->
   <section id="home" class="hero">
-    <div class="hero-background"></div>
-    <div class="container">
+    <div class="container hero-container">
       <div class="hero-content">
-        <h1 class="hero-title">
-          Welcome to <span class="gradient-text">Ethrah</span>
-        </h1>
-        <p class="hero-subtitle">
-          Discover premium products curated just for you
-        </p>
-        <div class="hero-cta">
-          <a href="#products" class="btn btn-primary">Explore Products</a>
-          <a href="#contact" class="btn btn-secondary">Get in Touch</a>
-        </div>
+        <h1 class="hero-title">ETHRA - <br>Discover Unique<br>Female Accessories. Direct to<br>Your Favorite Apps.</h1>
+        <a href="#products" class="btn btn-primary shop-now-btn">SHOP NOW</a>
       </div>
-    </div>
-    <div class="scroll-indicator">
-      <span>Scroll to explore</span>
-      <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-        <path d="M10 4V16M10 16L4 10M10 16L16 10" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-          stroke-linejoin="round" />
-      </svg>
+      <div class="hero-image-wrapper">
+        <img src="/hero-image.png" alt="Elegant Jewelry" class="hero-img">
+      </div>
     </div>
   </section>
 
-  <!-- Featured Products Section -->
+  <!-- Product Section -->
   <section id="products" class="products-section">
     <div class="container">
       <div class="section-header">
-        <h2 class="section-title">Featured Products</h2>
-        <p class="section-subtitle">Explore our handpicked collection</p>
+        <h2 class="section-title">PRODUCT SECTION</h2>
+        <div class="divider"></div>
       </div>
 
-      <div id="products-grid" class="products-grid">
-        <!-- Products will be dynamically inserted here -->
+      <div class="products-grid" id="products-grid">
+        <!-- Products injected by JS -->
       </div>
     </div>
   </section>
 
   <!-- About Section -->
   <section id="about" class="about-section">
-    <div class="container">
-      <div class="about-content">
-        <div class="about-text">
-          <h2 class="section-title">About Ethrah</h2>
-          <p class="about-description">
-            At Ethrah, we believe in providing exceptional quality and personalized service.
-            Our carefully curated collection brings you the finest products, backed by our
-            commitment to customer satisfaction.
-          </p>
-          <p class="about-description">
-            Connect with us directly through Instagram or WhatsApp for a personalized shopping
-            experience. We're here to help you find exactly what you're looking for.
-          </p>
-          <div class="about-stats">
-            <div class="stat">
-              <h3 class="stat-number">100+</h3>
-              <p class="stat-label">Happy Customers</p>
-            </div>
-            <div class="stat">
-              <h3 class="stat-number">50+</h3>
-              <p class="stat-label">Premium Products</p>
-            </div>
-            <div class="stat">
-              <h3 class="stat-number">24/7</h3>
-              <p class="stat-label">Customer Support</p>
-            </div>
-          </div>
-        </div>
-        <div class="about-image">
-          <div class="image-placeholder">
-            <svg width="100" height="100" viewBox="0 0 100 100" fill="none">
-              <circle cx="50" cy="50" r="40" stroke="currentColor" stroke-width="2" opacity="0.3" />
-              <path d="M50 30V70M30 50H70" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-            </svg>
-          </div>
-        </div>
+    <div class="container about-container">
+      <div class="about-text">
+        <h2 class="section-title text-left">ABOUT US</h2>
+        <div class="divider-left"></div>
+        <p class="about-desc">
+          Our jewelry collection is curated to reflect elegance and style.
+          We bring you exclusive designs that are perfect for modern women who appreciate quality and aesthetics.
+          <br><br>
+          We source and find handpicked accessories to ensure access to our members.
+        </p>
+      </div>
+      <div class="about-image-wrapper">
+        <img src="/about-image.png" alt="About Ethra" class="about-img">
       </div>
     </div>
   </section>
 
-  <!-- Contact Section -->
-  <section id="contact" class="contact-section">
+  <!-- Footer/Contact Section -->
+  <footer id="contact" class="main-footer">
     <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">Get in Touch</h2>
-        <p class="section-subtitle">We'd love to hear from you</p>
-      </div>
-
-      <div class="contact-methods">
-        <a href="javascript:void(0)" id="instagram-link" class="contact-card instagram-card">
-          <div class="contact-icon">
-            <svg width="40" height="40" viewBox="0 0 24 24" fill="none">
-              <rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="2" />
-              <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2" />
-              <circle cx="18" cy="6" r="1" fill="currentColor" />
-            </svg>
+      <div class="footer-grid">
+        <!-- Brand/Social -->
+        <div class="footer-col brand-col">
+          <img src="/logo.png" alt="Ethra" class="footer-logo">
+          <div class="social-icons">
+            <a href="javascript:void(0)" id="footer-instagram" class="social-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="2" width="20" height="20" rx="5" />
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+              </svg>
+            </a>
+            <a href="javascript:void(0)" id="footer-whatsapp" class="social-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path
+                  d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+              </svg>
+            </a>
           </div>
-          <h3>Instagram</h3>
-          <p>Follow us for updates</p>
-        </a>
-
-        <a href="javascript:void(0)" id="whatsapp-link" class="contact-card whatsapp-card">
-          <div class="contact-icon">
-            <svg width="40" height="40" viewBox="0 0 24 24" fill="none">
-              <path
-                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
-                fill="currentColor" />
-            </svg>
-          </div>
-          <h3>WhatsApp</h3>
-          <p>Chat with us directly</p>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-content">
-        <div class="footer-brand">
-          <h3 class="logo-text">Ethrah</h3>
-          <p>Premium shopping experience</p>
         </div>
 
-        <div class="footer-links">
-          <div class="footer-column">
-            <h4>Quick Links</h4>
-            <a href="#home">Home</a>
-            <a href="#products">Products</a>
-            <a href="#about">About</a>
-            <a href="#contact">Contact</a>
-          </div>
+        <!-- Contact Us -->
+        <div class="footer-col">
+          <h4>CONTACT US</h4>
+          <ul class="footer-list">
+            <li><a href="mailto:contact@ethra.in">contact@ethra.in</a></li>
+            <li><a href="tel:+918086487723">+91 8086487723</a></li>
+          </ul>
+        </div>
 
-          <div class="footer-column">
-            <h4>Connect</h4>
-            <a href="javascript:void(0)" id="footer-instagram">Instagram</a>
-            <a href="javascript:void(0)" id="footer-whatsapp">WhatsApp</a>
-          </div>
+        <!-- Shipping Info -->
+        <div class="footer-col">
+          <h4>SHIPPING INFO</h4>
+          <ul class="footer-list">
+            <li><a href="#">Delivery Delivery</a></li>
+            <li><a href="#">Shipping Info</a></li>
+            <li><a href="#">Delivery Options</a></li>
+          </ul>
+        </div>
+
+        <!-- FAQ/Legal -->
+        <div class="footer-col">
+          <h4>FAQ</h4>
+          <ul class="footer-list">
+            <li><a href="#">What is your return policy?</a></li>
+            <li><a href="#">How can we help?</a></li>
+            <li><a href="#">Shipping info</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
         </div>
       </div>
 
-      <div class="footer-bottom">
-        <p>&copy; 2026 Ethrah. All rights reserved.</p>
+      <div class="footer-bottom-bar">
+        <p>&copy; 2026 Ethra. All rights reserved.</p>
       </div>
     </div>
   </footer>
