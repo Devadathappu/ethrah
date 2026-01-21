@@ -115,7 +115,11 @@ ul {
   border: none;
   color: var(--color-text-dark);
   cursor: pointer;
-  padding: 5px;
+  padding: 10px;
+  /* Increased padding */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Mobile Menu */
