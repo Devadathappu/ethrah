@@ -113,16 +113,85 @@ function setupSmoothScroll() {
 // ============================================
 // Render Products
 // ============================================
-function renderProducts() {
-    productsGrid = document.getElementById('products-grid');
-    if (!productsGrid) return;
+// ============================================
+// Search Logic
+// ============================================
+function setupSearch() {
+    const searchBtn = document.getElementById('search-btn');
+    const closeSearchBtn = document.getElementById('close-search');
+    const searchOverlay = document.getElementById('search-overlay');
+    const searchInput = document.getElementById('search-input');
 
-    if (!products || products.length === 0) {
-        productsGrid.innerHTML = '<div class="loading"></div>';
+    if (searchBtn && searchOverlay && searchInput) {
+        // Open
+        searchBtn.addEventListener('click', () => {
+            searchOverlay.classList.add('active');
+            searchInput.focus();
+        });
+
+        // Close
+        closeSearchBtn.addEventListener('click', () => {
+            searchOverlay.classList.remove('active');
+            searchInput.value = ''; // Clear input
+            renderProducts(products); // Reset grid
+        });
+
+        // Close on esc
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && searchOverlay.classList.contains('active')) {
+                searchOverlay.classList.remove('active');
+            }
+        });
+
+        // Search Input Handler (Debounced slightly for performance if needed, but direct is fine for small list)
+        searchInput.addEventListener('input', (e) => {
+            const query = e.target.value.toLowerCase().trim();
+            handleSearch(query);
+        });
+    }
+}
+
+function handleSearch(query) {
+    if (!query) {
+        renderProducts(products);
         return;
     }
 
-    productsGrid.innerHTML = products.map((product, index) => `
+    const filtered = products.filter(p =>
+        p.name.toLowerCase().includes(query) ||
+        p.price.toLowerCase().includes(query)
+    );
+
+    renderProducts(filtered, query);
+}
+
+// ============================================
+// Render Products
+// ============================================
+function renderProducts(productsToRender = products, searchQuery = '') { // Default to all products
+    productsGrid = document.getElementById('products-grid');
+    if (!productsGrid) return;
+
+    if (!productsToRender || productsToRender.length === 0) {
+        // Sanitize query for display
+        const safeQuery = searchQuery.replace(/[&<>"']/g, function (m) {
+            return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;' }[m];
+        });
+
+        productsGrid.innerHTML = `
+            <div class="no-results" style="grid-column: 1/-1; text-align: center; padding: 2rem;">
+                <p style="font-family: var(--font-serif); font-size: 1.2rem; color: var(--color-text-light);">
+                    No products found matching "${safeQuery}"
+                </p>
+                <button onclick="document.getElementById('search-input').value=''; renderProducts();" 
+                        class="btn btn-primary" style="margin-top: 1rem;">
+                    View All Products
+                </button>
+            </div>`;
+        return;
+    }
+
+    productsGrid.innerHTML = productsToRender.map((product, index) => `
     <div class="product-card" style="animation-delay: ${index * 0.1}s">
       <div class="product-image-container">
         <img src="${product.image}" alt="${product.name}" class="product-image" 
@@ -180,7 +249,8 @@ function init() {
     console.log('Initializing Ethrah...');
     setupNavbarScroll();
     setupMobileMenu();
-    setupNavbarIcons();
+    setupSearch(); // Added search setup
+    // setupNavbarIcons(); // Removed Search/Cart alert logic from here for Search
     renderProducts();
     setupSocialLinks();
     setupSmoothScroll();
