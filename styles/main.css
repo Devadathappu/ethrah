@@ -115,11 +115,16 @@ ul {
   border: none;
   color: var(--color-text-dark);
   cursor: pointer;
-  padding: 10px;
-  /* Increased padding */
+  padding: 12px;
+  /* Further increased padding */
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+  z-index: 1005;
+  /* High z-index */
+  pointer-events: auto !important;
+  /* Force events */
 }
 
 /* Mobile Menu */
