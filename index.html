@@ -49,18 +49,19 @@
         </ul>
       </div>
 
-      <div class="nav-right">
-        <button class="icon-btn" aria-label="Search">
-          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+      <div class="nav-right" style="position: relative; z-index: 1002;">
+        <button class="icon-btn" aria-label="Search" onclick="alert('Search feature coming soon!')">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
             <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
           </svg>
         </button>
-        <button class="icon-btn" aria-label="Cart">
-          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <button class="icon-btn" aria-label="Cart" onclick="alert('Cart feature coming soon!')">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
             <path d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
           </svg>
         </button>
-        <button class="mobile-menu-btn" aria-label="Menu">
+        <button class="mobile-menu-btn" aria-label="Menu"
+          onclick="document.querySelector('.mobile-menu').classList.toggle('active')">
           <span></span>
           <span></span>
           <span></span>
