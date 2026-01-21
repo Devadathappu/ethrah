@@ -45,23 +45,23 @@
 .btn-primary {
     background: var(--gradient-primary);
     color: white;
-    box-shadow: 0 4px 15px rgba(235, 85, 116, 0.25);
+    box-shadow: 0 4px 15px rgba(192, 170, 143, 0.25);
 }
 
 .btn-primary:hover {
-    box-shadow: 0 6px 20px rgba(235, 85, 116, 0.35);
+    box-shadow: 0 6px 20px rgba(192, 170, 143, 0.35);
     transform: translateY(-2px);
 }
 
 .btn-secondary {
     background: transparent;
-    color: var(--primary-600);
+    color: var(--primary-700);
     border: 2px solid var(--primary-500);
 }
 
 .btn-secondary:hover {
-    background: var(--primary-50);
-    box-shadow: 0 4px 15px rgba(235, 85, 116, 0.15);
+    background: var(--primary-100);
+    box-shadow: 0 4px 15px rgba(192, 170, 143, 0.15);
     transform: translateY(-2px);
 }
 
@@ -80,7 +80,7 @@
    ============================================ */
 .product-card {
     background: white;
-    border: 1px solid rgba(235, 85, 116, 0.1);
+    border: 1px solid rgba(192, 170, 143, 0.1);
     border-radius: var(--radius-xl);
     overflow: hidden;
     transition: all var(--transition-base);
@@ -93,14 +93,14 @@
 .product-card:hover {
     transform: translateY(-8px);
     border-color: var(--primary-400);
-    box-shadow: 0 12px 24px rgba(235, 85, 116, 0.15);
+    box-shadow: 0 12px 24px rgba(192, 170, 143, 0.15);
 }
 
 .product-image {
     width: 100%;
     aspect-ratio: 1;
     object-fit: cover;
-    background: linear-gradient(135deg, #faf6f3 0%, #f5d5d8 100%);
+    background: linear-gradient(135deg, #f9f6f2 0%, #e8dfd4 100%);
     position: relative;
     overflow: hidden;
 }
@@ -178,7 +178,7 @@
    ============================================ */
 .contact-card {
     background: white;
-    border: 1px solid rgba(235, 85, 116, 0.1);
+    border: 1px solid rgba(192, 170, 143, 0.1);
     border-radius: var(--radius-xl);
     padding: var(--spacing-xl);
     text-align: center;
@@ -194,7 +194,7 @@
 
 .contact-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 12px 24px rgba(235, 85, 116, 0.15);
+    box-shadow: 0 12px 24px rgba(192, 170, 143, 0.15);
 }
 
 .contact-icon {

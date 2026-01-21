@@ -13,58 +13,59 @@
 }
 
 :root {
-  /* Color Palette - Elegant & Feminine */
-  /* Rose Gold & Soft Pink Theme */
-  --primary-hue: 345;
-  --primary-sat: 65%;
-  --primary-light: 65%;
+  /* Color Palette - Beige & Cream Theme (Ethrah Design) */
+  --primary-hue: 30;
+  --primary-sat: 25%;
+  --primary-light: 45%;
 
-  --primary-50: #fef5f7;
-  --primary-100: #fde8ec;
-  --primary-200: #fbd1da;
-  --primary-300: #f8aab9;
-  --primary-400: #f47a93;
-  --primary-500: #eb5574;
-  --primary-600: #d63d5f;
-  --primary-700: #b42d4d;
-  --primary-800: #962846;
-  --primary-900: #7f2640;
+  /* Beige & Cream Palette */
+  --primary-50: #fdfcfb;
+  --primary-100: #f9f6f2;
+  --primary-200: #f3ede5;
+  --primary-300: #e8dfd4;
+  --primary-400: #d4c4b0;
+  --primary-500: #c0aa8f;
+  --primary-600: #a68968;
+  --primary-700: #8b6f4f;
+  --primary-800: #6b5540;
+  --primary-900: #4a3d2f;
 
-  --accent-rose: #d4a5a5;
-  --accent-gold: #c9a882;
-  --accent-blush: #f5d5d8;
-  --accent-cream: #faf6f3;
+  /* Accent Colors */
+  --accent-cream: #f9f6f2;
+  --accent-tan: #d4c4b0;
+  --accent-brown: #8b6f4f;
+  --accent-dark: #4a3d2f;
 
-  /* Gradients - Soft & Elegant */
-  --gradient-primary: linear-gradient(135deg, #eb5574 0%, #d4a5a5 100%);
-  --gradient-rose-gold: linear-gradient(135deg, #fbd1da 0%, #c9a882 100%);
+  /* Gradients - Warm & Elegant */
+  --gradient-primary: linear-gradient(135deg, #c0aa8f 0%, #a68968 100%);
+  --gradient-beige: linear-gradient(135deg, #f9f6f2 0%, #e8dfd4 100%);
   --gradient-hero: linear-gradient(135deg,
-      #faf6f3 0%,
-      #f5d5d8 50%,
-      #fbd1da 100%);
+      #fdfcfb 0%,
+      #f3ede5 50%,
+      #e8dfd4 100%);
   --gradient-card: linear-gradient(135deg,
-      rgba(235, 85, 116, 0.05) 0%,
-      rgba(212, 165, 165, 0.05) 100%);
+      rgba(192, 170, 143, 0.05) 0%,
+      rgba(212, 196, 176, 0.05) 100%);
 
-  /* Neutral Colors - Warm Tones */
-  --gray-50: #fafafa;
-  --gray-100: #f7f5f4;
-  --gray-200: #ede8e6;
-  --gray-300: #d6ccc7;
-  --gray-400: #b5a8a3;
-  --gray-500: #8a7d78;
-  --gray-600: #6b5f5a;
-  --gray-700: #4d4340;
-  --gray-800: #332d2b;
-  --gray-900: #1f1b1a;
+  /* Neutral Colors - Warm Beige Tones */
+  --gray-50: #fdfcfb;
+  --gray-100: #f9f6f2;
+  --gray-200: #f3ede5;
+  --gray-300: #e8dfd4;
+  --gray-400: #d4c4b0;
+  --gray-500: #a68968;
+  --gray-600: #8b6f4f;
+  --gray-700: #6b5540;
+  --gray-800: #4a3d2f;
+  --gray-900: #2d2419;
 
-  --bg-primary: #ffffff;
-  --bg-secondary: #faf6f3;
-  --bg-tertiary: #f7f5f4;
+  --bg-primary: #fdfcfb;
+  --bg-secondary: #f9f6f2;
+  --bg-tertiary: #f3ede5;
 
-  --text-primary: #1f1b1a;
-  --text-secondary: #6b5f5a;
-  --text-tertiary: #8a7d78;
+  --text-primary: #2d2419;
+  --text-secondary: #6b5540;
+  --text-tertiary: #8b6f4f;
 
   /* Spacing */
   --spacing-xs: 0.5rem;
@@ -109,7 +110,7 @@
   --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08);
   --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
   --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
-  --shadow-glow: 0 0 30px rgba(235, 85, 116, 0.2);
+  --shadow-glow: 0 0 30px rgba(192, 170, 143, 0.2);
 
   /* Transitions */
   --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -225,14 +226,14 @@ a:hover {
   left: 0;
   right: 0;
   z-index: var(--z-fixed);
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(253, 252, 251, 0.95);
   backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(235, 85, 116, 0.1);
+  border-bottom: 1px solid rgba(192, 170, 143, 0.15);
   transition: all var(--transition-base);
 }
 
 .navbar.scrolled {
-  background: rgba(255, 255, 255, 0.98);
+  background: rgba(253, 252, 251, 0.98);
   box-shadow: var(--shadow-md);
 }
 
@@ -341,7 +342,7 @@ a:hover {
   top: 85px;
   left: 0;
   right: 0;
-  background: rgba(255, 255, 255, 0.98);
+  background: rgba(253, 252, 251, 0.98);
   backdrop-filter: blur(20px);
   padding: var(--spacing-lg);
   display: flex;
@@ -351,7 +352,7 @@ a:hover {
   opacity: 0;
   transition: all var(--transition-base);
   z-index: var(--z-dropdown);
-  border-bottom: 1px solid rgba(235, 85, 116, 0.1);
+  border-bottom: 1px solid rgba(192, 170, 143, 0.15);
   box-shadow: var(--shadow-md);
 }
 
@@ -399,8 +400,8 @@ a:hover {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(circle at 20% 50%, rgba(235, 85, 116, 0.08) 0%, transparent 50%),
-    radial-gradient(circle at 80% 80%, rgba(212, 165, 165, 0.08) 0%, transparent 50%);
+    radial-gradient(circle at 20% 50%, rgba(192, 170, 143, 0.06) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(212, 196, 176, 0.06) 0%, transparent 50%);
   animation: pulse 8s ease-in-out infinite;
 }
 
@@ -642,7 +643,7 @@ section {
 .footer {
   background: var(--bg-secondary);
   padding: var(--spacing-2xl) 0 var(--spacing-lg);
-  border-top: 1px solid rgba(235, 85, 116, 0.15);
+  border-top: 1px solid rgba(192, 170, 143, 0.15);
 }
 
 .footer-content {
@@ -699,7 +700,7 @@ section {
 .footer-bottom {
   text-align: center;
   padding-top: var(--spacing-lg);
-  border-top: 1px solid rgba(235, 85, 116, 0.1);
+  border-top: 1px solid rgba(192, 170, 143, 0.1);
 }
 
 .footer-bottom p {
