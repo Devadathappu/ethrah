@@ -229,6 +229,130 @@ function renderProducts(productsToRender = products, searchQuery = '') { // Defa
 }
 
 // ============================================
+// Cart Logic
+// ============================================
+let cart = [];
+
+function setupCart() {
+    const cartBtn = document.getElementById('cart-btn');
+    const cartOverlay = document.getElementById('cart-overlay');
+    const checkoutBtn = document.getElementById('checkout-btn');
+
+    // Load cart from local storage
+    const savedCart = localStorage.getItem('ethrah_cart');
+    if (savedCart) {
+        cart = JSON.parse(savedCart);
+        updateCartUI();
+    }
+
+    if (cartBtn && cartOverlay) {
+        cartBtn.addEventListener('click', () => {
+            cartOverlay.classList.add('active');
+        });
+    }
+
+    if (checkoutBtn) {
+        checkoutBtn.addEventListener('click', checkout);
+    }
+}
+
+function addToCart(productId) {
+    const product = products.find(p => p.id === productId);
+    if (product) {
+        cart.push(product);
+        localStorage.setItem('ethrah_cart', JSON.stringify(cart));
+        updateCartUI();
+
+        // Show simplified feedback (can be improved with toast later)
+        const cartOverlay = document.getElementById('cart-overlay');
+        cartOverlay.classList.add('active');
+    }
+}
+
+window.removeFromCart = function (index) {
+    cart.splice(index, 1);
+    localStorage.setItem('ethrah_cart', JSON.stringify(cart));
+    updateCartUI();
+}
+
+window.performAddToCart = function (productId) {
+    addToCart(productId);
+}
+
+
+function updateCartUI() {
+    const cartItemsContainer = document.getElementById('cart-items');
+    const cartCountBadge = document.getElementById('cart-count');
+    const cartTotalEl = document.getElementById('cart-total-amount');
+
+    if (cartCountBadge) {
+        cartCountBadge.innerText = cart.length;
+        cartCountBadge.style.display = cart.length > 0 ? 'flex' : 'none';
+    }
+
+    if (!cartItemsContainer) return;
+
+    if (cart.length === 0) {
+        cartItemsContainer.innerHTML = '<p style="text-align:center; color:#999; margin-top:2rem;">Your cart is empty.</p>';
+        if (cartTotalEl) cartTotalEl.innerText = '₹0';
+        return;
+    }
+
+    let total = 0;
+
+    cartItemsContainer.innerHTML = cart.map((item, index) => {
+        // Parse price: "₹2,999" -> 2999
+        let priceNum = 0;
+        try {
+            priceNum = parseInt(item.price.replace(/[^0-9]/g, ''));
+        } catch (e) { }
+        total += priceNum;
+
+        return `
+        <div class="cart-item">
+            <img src="${item.image}" alt="${item.name}" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22%3E%3Crect fill=%22%23eee%22 width=%22100%22 height=%22100%22/%3E%3C/svg%3E'">
+            <div class="cart-item-details">
+                <div class="cart-item-title">${item.name}</div>
+                <div class="cart-item-price">${item.price}</div>
+                <div class="remove-item" onclick="removeFromCart(${index})">Remove</div>
+            </div>
+        </div>
+        `;
+    }).join('');
+
+    if (cartTotalEl) {
+        cartTotalEl.innerText = '₹' + total.toLocaleString('en-IN');
+    }
+}
+
+
+function checkout() {
+    if (cart.length === 0) {
+        alert("Your cart is empty!");
+        return;
+    }
+
+    let message = "Hi! I'd like to place an order for the following items:\n\n";
+    let total = 0;
+
+    cart.forEach((item, index) => {
+        message += `${index + 1}. ${item.name} - ${item.price}\n`;
+        let priceNum = 0;
+        try {
+            priceNum = parseInt(item.price.replace(/[^0-9]/g, ''));
+        } catch (e) { }
+        total += priceNum;
+    });
+
+    message += `\n----------------\nTotal Amount: ₹${total.toLocaleString('en-IN')}`;
+
+    const phoneNumber = "918086487723";
+    const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+
+    window.open(url, '_blank');
+}
+
+// ============================================
 // Social Links
 // ============================================
 function setupSocialLinks() {
